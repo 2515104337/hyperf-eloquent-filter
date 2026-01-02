@@ -12,6 +12,37 @@ use Hyperf\Stringable\Str;
  * 用于构建可复用的查询过滤器
  *
  * @mixin QueryBuilder
+ *
+ * @method $this where(string|\Closure $column, mixed $operator = null, mixed $value = null, string $boolean = 'and')
+ * @method $this whereLike(string $column, mixed $value, string $boolean = 'and')
+ * @method $this whereBeginsWith(string $column, mixed $value, string $boolean = 'and')
+ * @method $this whereEndsWith(string $column, mixed $value, string $boolean = 'and')
+ * @method $this whereIn(string $column, mixed $values, string $boolean = 'and', bool $not = false)
+ * @method $this whereNotIn(string $column, mixed $values, string $boolean = 'and')
+ * @method $this whereNull(string|array $columns, string $boolean = 'and', bool $not = false)
+ * @method $this whereNotNull(string|array $columns, string $boolean = 'and')
+ * @method $this whereBetween(string $column, array $values, string $boolean = 'and', bool $not = false)
+ * @method $this whereNotBetween(string $column, array $values, string $boolean = 'and')
+ * @method $this whereDate(string $column, string $operator, mixed $value = null, string $boolean = 'and')
+ * @method $this whereTime(string $column, string $operator, mixed $value = null, string $boolean = 'and')
+ * @method $this whereDay(string $column, string $operator, mixed $value = null, string $boolean = 'and')
+ * @method $this whereMonth(string $column, string $operator, mixed $value = null, string $boolean = 'and')
+ * @method $this whereYear(string $column, string $operator, mixed $value = null, string $boolean = 'and')
+ * @method $this orWhere(string|\Closure $column, mixed $operator = null, mixed $value = null)
+ * @method $this orderBy(string $column, string $direction = 'asc')
+ * @method $this orderByDesc(string $column)
+ * @method $this latest(string $column = 'created_at')
+ * @method $this oldest(string $column = 'created_at')
+ * @method $this groupBy(...$groups)
+ * @method $this having(string $column, string $operator = null, mixed $value = null, string $boolean = 'and')
+ * @method $this limit(int $value)
+ * @method $this offset(int $value)
+ * @method $this select(array|mixed $columns = ['*'])
+ * @method $this with(array|string $relations)
+ * @method $this withCount(array|string $relations)
+ * @method $this join(string $table, \Closure|string $first, string $operator = null, string $second = null, string $type = 'inner', bool $where = false)
+ * @method $this leftJoin(string $table, \Closure|string $first, string $operator = null, string $second = null)
+ * @method $this rightJoin(string $table, \Closure|string $first, string $operator = null, string $second = null)
  */
 abstract class ModelFilter
 {
